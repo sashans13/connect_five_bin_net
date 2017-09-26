@@ -65,5 +65,28 @@ object Util {
 
     def isPowerOfTwo(num: Int): Boolean = num > 0 && (num & -num) == num
 
+
+    /**
+      * Get first power of two that is >= n
+      */
+    def getSmallestPow2GreaterThanOrEqN(n: Int): Int = {
+        // Assume int is 4 bytes
+
+        var _n = n
+
+        if (_n < 0) {
+            return 0
+        }
+
+        _n -= 1
+        _n |= _n >> 1
+        _n |= _n >> 2
+        _n |= _n >> 4
+        _n |= _n >> 8
+        _n |= _n >> 16
+
+        _n + 1
+    }
+
     def log2floor(num: Int): Int = (Math.log(num) / Math.log(2)).toInt
 }

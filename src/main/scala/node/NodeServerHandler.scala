@@ -1,6 +1,6 @@
 package node
 
-import java.net.Socket
+import java.net.{ServerSocket, Socket}
 
 class NodeServerHandler(node: Node) extends Runnable {
     override def run(): Unit = {

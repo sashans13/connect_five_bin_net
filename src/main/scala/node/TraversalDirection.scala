@@ -1,6 +1,6 @@
 package node
 
-sealed abstract class TraversalDirection(val dir: Int)
+sealed abstract class TraversalDirection(val dir: Int) extends Serializable
 
 case object TraversalSelf           extends TraversalDirection(dir = -1)
 case object TraversalLeftChild      extends TraversalDirection(dir = 0)

@@ -29,6 +29,7 @@ object Bootstrap {
     }
 
     def addNode(nodeConnInfo: ConnectionInfo): Unit = {
+        // TODO: lock?
         this.nodes(nodeConnInfo.nodeId) = nodeConnInfo
     }
 }

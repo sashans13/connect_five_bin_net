@@ -8,11 +8,21 @@ sealed trait NodeState
 case object Initial extends NodeState
 
 /**
-  * Currently connected
+  * Currently awaiting work
   */
-case object Connected extends NodeState
+case object IdleNoWork extends NodeState
 
 /**
-  * Architecture changing, wait until state changes to Connected
+  * Not working but has a GameProcessor
+  */
+case object IdleHasWork extends NodeState
+
+/**
+  * Currently working
+  */
+case object Busy extends NodeState
+
+/**
+  * Architecture changing
   */
 case object InReconstruction extends NodeState

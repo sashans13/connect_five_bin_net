@@ -9,12 +9,14 @@ object Playground {
         // Start in thread mode
         bootstrap.Bootstrap.startServer(runMode)
 
-        val numNodesToLaunch = 2
+        val numNodesToLaunch = 19
 
         for (i <- 0 until numNodesToLaunch) {
-            new Thread(new Node).start()
+            new Thread(new Node("")).start()
         }
 
+        Thread.sleep(2000)
+        new Thread(new Node("DELETE THIS")).start()
 //        val node1 = new Node
 //        val node2 = new Node
 //        val node3 = new Node
